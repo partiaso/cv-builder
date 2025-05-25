@@ -1,8 +1,7 @@
-import './App.css';
+import MainLayout from "./MainLayout";
 
 function App() {
-
-  return <h1>CV Builder</h1>;
+  return <MainLayout/>
 }
 
 export default App;
