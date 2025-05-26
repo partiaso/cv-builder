@@ -1,7 +1,7 @@
 import { useState } from "react"
 
-function Form(){
-  const [formSubmitted, setFormSubmitted] = useState(false)
+function CVForm({ onSubmittedForm}){
+  
   const [formData, setFormData] = useState({
   generalInfo: {
     fullName: '',
@@ -26,10 +26,9 @@ function Form(){
 
 });
 
-
-  function handleForm(e){
-    e.preventDefault()
-    setFormSubmitted(true)
+  function handleSubmit(e) {
+    e.preventDefault(); //
+    onSubmittedForm(true); 
   }
 
   function handleChange(section, e) {
@@ -43,7 +42,7 @@ function Form(){
       }))
   }
   return (
-    <form onSubmit={handleForm}>
+    <form onSubmit={handleSubmit}>
       <section>
         <h2>General Information</h2>
         <div className="input-container">
@@ -161,10 +160,9 @@ function Form(){
         </div>
       </section>
       <button type="submit" id="submit-btn">Create CV</button>
-      {formSubmitted && <p>✅ Form submitted!</p>}
     </form>
   );
 }
 
 
-export default Form
+export default CVForm
