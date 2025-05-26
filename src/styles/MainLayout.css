@@ -1,8 +1,8 @@
 
 .main-container {
   max-width: 1280px;
+  min-height: 100vh;
   margin: 0 auto;
-  margin-top: 50px;
   padding: 4rem;
   border: 1px solid #fff3;
   border-radius: 12px;

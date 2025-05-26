@@ -1,31 +1,7 @@
-import { useState } from "react"
 
-function CVForm({ onSubmittedForm}){
+
+function CVForm({formData, onSubmittedForm, setFormData}){
   
-  const [formData, setFormData] = useState({
-  generalInfo: {
-    fullName: '',
-    email: '',
-    phoneNumber: '',
-  },
-  education: 
-    {
-      schoolName: '',
-      fieldOfStudy: '',
-      dateOfStudy: '',
-    }
-  ,
-  experience: 
-    {
-      companyName: '',
-      positionTitle: '',
-      responsibilities: '',
-      startDate: '',
-      endDate: '',
-    }
-
-});
-
   function handleSubmit(e) {
     e.preventDefault(); //
     onSubmittedForm(true); 
