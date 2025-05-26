@@ -9,6 +9,7 @@
   flex-direction: column;
   color: #000c;
   background-color: #fff;
+  margin-bottom: 2rem;
 }
 
 .display-generalInfo {
@@ -22,12 +23,16 @@
 
 .general-contact {
   display: flex;
-  padding: 1rem;
+  gap: 12px;
 }
 
-.general-contact  p {
-  padding: 0 0.5rem;
+.general-contact div {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  text-decoration: underline
 }
+
 
 .two-column {
   display: grid;
@@ -42,7 +47,6 @@ h2 {
 }
 .left-side {
   margin-right: 8rem;
-  min-height: 200px;
 }
 
 .right-side > div {
@@ -65,4 +69,14 @@ h2 {
 .display-education,
 .display-experience {
   padding: 1rem 0;
+}
+
+#edit-btn {
+  padding: 8px 24px;
+  cursor: pointer;
+}
+
+img {
+  width: 14px ;
+  height: 14px ;
 }

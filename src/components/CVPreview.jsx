@@ -1,6 +1,13 @@
+import emailIcon from '../assets/email.svg'
+import phoneIcon from '../assets/phone.svg'
 
+function CVPreview({formData, setSubmittedForm}){
+    function formatDate(isoDate){
+    if (!isoDate) return '';
+    const [year, month, day] = isoDate.split('-')
+    return `${day}/${month}/${year}`
+  }
 
-function CVPreview({formData}){
 
   return (
     <>
@@ -10,8 +17,16 @@ function CVPreview({formData}){
           <h1>{formData.generalInfo.fullName}</h1>
         </div>
         <div className="general-contact">
-          <p>{formData.generalInfo.email}</p>
-          <p>{formData.generalInfo.phoneNumber}</p>
+          <div>
+            <img src={emailIcon} alt="email" />
+            <p>{formData.generalInfo.email}</p>
+          </div>
+          <div>
+            <img src={phoneIcon} alt="phone number" />
+            <p>{formData.generalInfo.phoneNumber}</p>
+          </div>
+
+
         </div>
       </div>
 
@@ -22,7 +37,7 @@ function CVPreview({formData}){
         <div className="right-side">
           <div>
             <h3>{formData.education.fieldOfStudy}</h3>
-            <p>{formData.education.dateOfStudy}</p>
+            <p>{formatDate(formData.education.dateOfStudy)}</p>
             </div>
           <div>
             <p>{formData.education.schoolName}</p>
@@ -38,8 +53,8 @@ function CVPreview({formData}){
           <div>
             <h3>{formData.experience.positionTitle}</h3>
             <div>
-              <p>{formData.experience.startDate}</p>
-              <p>{formData.experience.endDate}</p>
+              <p>{formatDate(formData.experience.startDate)}</p>
+              <p>{formatDate(formData.experience.endDate)}</p>
             </div>
           </div>
           <p>{formData.experience.companyName}</p>
@@ -47,7 +62,7 @@ function CVPreview({formData}){
         </div>
       </div>
     </div>
-    <button id="edit-btn">Edit CV</button>
+    <button onClick={() => setSubmittedForm(false)} id="edit-btn">Edit CV</button>
     </>
   )
 }

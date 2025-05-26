@@ -1,10 +1,8 @@
-import CVForm from './components/Form.jsx'
-import './styles/MainLayout.css'
-import './styles/CVPreview.css'
+import CVForm from './Form.jsx'
+import '../styles/MainLayout.css'
+import '../styles/CVPreview.css'
 import { useState } from 'react'
 import CVPreview  from './CVPreview.jsx'
-
-
 
 
 function MainLayout(){
@@ -35,7 +33,7 @@ function MainLayout(){
   return(
   <div className='main-container'>
     {
-    !formSubmitted ? <CVForm onSubmittedForm={setFormSubmitted} setFormData={setFormData} formData={formData}/> : <CVPreview formData={formData}/>      
+    !formSubmitted ? <CVForm onSubmittedForm={setFormSubmitted} setFormData={setFormData} formData={formData}/> : <CVPreview formData={formData} setSubmittedForm ={setFormSubmitted}/>      
     }
   </div>
   )

@@ -17,6 +17,7 @@ function CVForm({formData, onSubmittedForm, setFormData}){
       }
       }))
   }
+
   return (
     <form onSubmit={handleSubmit}>
       <section>
